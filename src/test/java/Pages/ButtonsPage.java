@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Buttons extends BasePage {
+public class ButtonsPage extends BasePage {
 
     Actions actions = new Actions(driver);
 
@@ -68,7 +68,7 @@ public class Buttons extends BasePage {
     @FindBy (xpath = "//*[@id=\"root\"]/div/div/div[5]/div[3]/a")
     private WebElement practicePage;
 
-    public Buttons(WebDriver driver, WebDriverWait webDriverWait) {
+    public ButtonsPage(WebDriver driver, WebDriverWait webDriverWait) {
         super(driver, webDriverWait);
     }
 

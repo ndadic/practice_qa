@@ -1,7 +1,7 @@
 package Tests;
 
 
-import Pages.Buttons;
+import Pages.ButtonsPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -13,14 +13,14 @@ import java.util.List;
 
 public class ButtonsTests extends BaseTest {
 
-    protected Buttons buttons;
+    protected ButtonsPage buttons;
 
 
     @Override
     @BeforeClass
     public void beforeClass() {
         super.beforeClass();
-        buttons = new Buttons(driver, webDriverWait);
+        buttons = new ButtonsPage(driver, webDriverWait);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(500));
     }
 

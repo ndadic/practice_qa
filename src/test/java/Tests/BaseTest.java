@@ -16,7 +16,7 @@ public abstract class BaseTest {
     protected WebDriver driver;
     protected WebDriverWait webDriverWait;
     protected final String BASE_URL = "https://commitquality.com";
-    protected GeneralComponents generalComponents;
+    protected GeneralComponentsPage generalComponents;
     protected JavascriptExecutor js;
 
     @BeforeClass
@@ -24,7 +24,7 @@ public abstract class BaseTest {
         driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        generalComponents = new GeneralComponents(driver, webDriverWait);
+        generalComponents = new GeneralComponentsPage(driver, webDriverWait);
         js = (JavascriptExecutor) driver;
     }
 
