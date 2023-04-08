@@ -15,10 +15,10 @@ public abstract class BaseTest {
 
     protected WebDriver driver;
     protected WebDriverWait webDriverWait;
-    protected final String BASE_URL = "https://commitquality.com/practice";
+    protected final String BASE_URL = "https://commitquality.com";
     protected GeneralComponents generalComponents;
-
     protected JavascriptExecutor js;
+
     @BeforeClass
     public void beforeClass() {
         driver = new EdgeDriver();

@@ -35,19 +35,45 @@ public class Buttons extends BasePage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[2]/input")
     private WebElement radioButtonTwo;
 
-    @FindBy (xpath = "//*[@id=\"root\"]/div/div/div[2]/div/p")
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/p")
     private WebElement radioButtonText;
 
-    @FindBy (xpath = "//*[@id=\"root\"]/div/div/div[3]/div/select")
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[3]/div/select")
     private WebElement selectOption;
 
-    Select select = new Select(selectOption);
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[4]/div/div[1]/input")
+    private WebElement checkboxOne;
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[4]/div/div[1]/p")
+    private WebElement checkboxOneMsg;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[4]/div/div[2]/input")
+    private WebElement checkboxTwo;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[4]/div/div[2]/p")
+    private WebElement checkboxTwoMsg;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[4]/div/div[3]/input")
+    private WebElement checkboxThree;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[4]/div/div[3]/p")
+    private WebElement checkboxThreeMsg;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[5]/div[1]/a")
+    private WebElement youTube;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[5]/div[2]/a")
+    private WebElement youTubeNewTab;
+
+    @FindBy (xpath = "//*[@id=\"root\"]/div/div/div[5]/div[3]/a")
+    private WebElement practicePage;
 
     public Buttons(WebDriver driver, WebDriverWait webDriverWait) {
         super(driver, webDriverWait);
     }
 
+
+    //Methods used for checking buttons
     public void oneClick() {
         basicClick.click();
     }
@@ -76,15 +102,16 @@ public class Buttons extends BasePage {
         return message;
     }
 
-    public void clickOne (){
+    //Methods used for checking radio buttons
+    public void clickOne() {
         radioButtonOne.click();
     }
 
-    public void clickTwo (){
+    public void clickTwo() {
         radioButtonTwo.click();
     }
 
-    public String radioButtonTextMsg (){
+    public String radioButtonTextMsg() {
         String message = radioButtonText.getText();
         return message;
     }
@@ -93,7 +120,52 @@ public class Buttons extends BasePage {
         return radioButtonText;
     }
 
-    public void clickSelect(){
-        selectOption.click();
+    //Methods used for checking select option
+
+    public void selectOption(String text) {
+        Select drop = new Select(selectOption);
+        drop.selectByValue(text);
+    }
+
+    public WebElement getSelectOption() {
+        return selectOption;
+    }
+
+    //Methods used for checkboxes
+    public void clickCheckboxOne() {
+        checkboxOne.click();
+    }
+
+    public WebElement getCheckboxOneMsg() {
+        return checkboxOneMsg;
+    }
+
+    public void clickCheckboxTwo() {
+        checkboxTwo.click();
+    }
+
+    public WebElement getCheckboxTwoMsg() {
+        return checkboxTwoMsg;
+    }
+
+    public void clickCheckboxThree() {
+        checkboxThree.click();
+    }
+
+    public WebElement getCheckboxThreeMsg() {
+        return checkboxThreeMsg;
+    }
+
+    //Methods used for checking links
+    public WebElement getYouTube() {
+        return youTube;
+    }
+
+    public WebElement getYouTubeNewTab() {
+        return youTubeNewTab;
+    }
+
+    public WebElement getPracticePage() {
+        return practicePage;
     }
 }
