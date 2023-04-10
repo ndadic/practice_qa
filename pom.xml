@@ -26,8 +26,8 @@
     </dependency>
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-edge-driver</artifactId>
-        <version>4.7.2</version>
+        <artifactId>selenium-chrome-driver</artifactId>
+        <version>4.8.0</version>
     </dependency>
 </dependencies>
 </project>

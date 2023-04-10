@@ -15,6 +15,9 @@ public class GeneralComponentsPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[2]")
     private WebElement accordions;
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[3]")
+    private WebElement iframes;
+
     public GeneralComponentsPage(WebDriver driver, WebDriverWait webDriverWait) {
         super(driver, webDriverWait);
     }
@@ -29,5 +32,9 @@ public class GeneralComponentsPage extends BasePage {
 
     public WebElement getAccordions() {
         return accordions;
+    }
+
+    public WebElement getIframes() {
+        return iframes;
     }
 }

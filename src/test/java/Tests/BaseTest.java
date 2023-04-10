@@ -3,7 +3,8 @@ package Tests;
 import Pages.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -21,7 +22,9 @@ public abstract class BaseTest {
 
     @BeforeClass
     public void beforeClass() {
-        driver = new EdgeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
+        driver = new ChromeDriver(chromeOptions);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         generalComponents = new GeneralComponentsPage(driver, webDriverWait);
@@ -30,7 +33,7 @@ public abstract class BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        driver.get(BASE_URL);
+        driver.get("https://commitquality.com");
         driver.manage().window().maximize();
     }
 
