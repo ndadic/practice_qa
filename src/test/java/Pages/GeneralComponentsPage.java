@@ -21,6 +21,12 @@ public class GeneralComponentsPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[5]")
     private WebElement dynamicTexts;
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[6]")
+    private WebElement fileUpload;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[7]")
+    private WebElement dragAndDrop;
+
     public GeneralComponentsPage(WebDriver driver, WebDriverWait webDriverWait) {
         super(driver, webDriverWait);
     }
@@ -43,5 +49,13 @@ public class GeneralComponentsPage extends BasePage {
 
     public WebElement getDynamicTexts() {
         return dynamicTexts;
+    }
+
+    public WebElement getFileUpload() {
+        return fileUpload;
+    }
+
+    public WebElement getDragAndDrop() {
+        return dragAndDrop;
     }
 }
