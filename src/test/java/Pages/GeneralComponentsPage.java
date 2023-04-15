@@ -27,6 +27,9 @@ public class GeneralComponentsPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[7]")
     private WebElement dragAndDrop;
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[8]")
+    private WebElement contactUs;
+
     public GeneralComponentsPage(WebDriver driver, WebDriverWait webDriverWait) {
         super(driver, webDriverWait);
     }
@@ -57,5 +60,9 @@ public class GeneralComponentsPage extends BasePage {
 
     public WebElement getDragAndDrop() {
         return dragAndDrop;
+    }
+
+    public WebElement getContactUs() {
+        return contactUs;
     }
 }
